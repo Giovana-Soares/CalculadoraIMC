@@ -5,7 +5,7 @@
 - Apresenta a faixa de peso em que o usuário está
  
 ## Tecnologias utilizadas 
-  - dotnet core 2.1
+  - dotnet core 6.0
 
 ## Como executar 
 Faça o clone do respositorio e execute o comando:
