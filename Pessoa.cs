@@ -4,50 +4,62 @@ public class Pessoa{
     public double Altura{get;set;}
     public double Peso { get; set; }
 
-   
-   
-   
-    public Pessoa(string Nome, double Altura, double Peso)
-    {
-        Nome= Nome;
-        Altura=Altura;
-        Peso=Peso;
-    }
 
-    public double Imc { get => (Math.Round(peso / (altura * altura), 2); }
+    public double IMC { get => Peso / (Altura * Altura); }
 
+    
     public string FaixaIMC {
-        if (imc<17)
+        if (IMC<17)
             {
-                return Console.WriteLine("Muito abaixo do peso");
+                return "Muito abaixo do peso";
             }
-            else if (imc>=17.00 && imc < 18.50)
+            else if (IMC>=17.00 && IMC < 18.50)
             {
-               return Console.WriteLine("Abaixo do peso");
+               return "Abaixo do peso";
             }
-            else if (imc>=18.50 && imc < 25.00)
+            else if (IMC>=18.50 && IMC < 25.00)
             {
-                return Console.WriteLine("Peso Normal");
+                return "Peso Normal";
             }
-            else if (imc>=25.00 && imc < 30.00)
+            else if (IMC>=25.00 && IMC < 30.00)
             {
-                return Console.WriteLine("Acima do Peso");
+                return "Acima do Peso";
             }
-            else if (imc>=30.00 && imc < 35.00)
+            else if (IMC>=30.00 && IMC < 35.00)
             {
-                return Console.WriteLine("Obesidade I");
+                return "Obesidade I";
             }
-            else if (imc>=35.00 && imc < 40.00)
+            else if (IMC>=35.00 && IMC < 40.00)
             {
-                return Console.WriteLine("Obesidade II (severa)");
+                return "Obesidade II (severa)"; 
             }
-            else if (imc>=40.00)
+            else
             {
-                return Console.WriteLine("Obesidade III (mórbida)");
-            }
-            else {
-                return Console.WriteLine("Valores invalidos");
-                }
+                return "Obesidade III (mórbida)";
             }
     }
+
+    public double Calculo{ 
+                 if(IMC<18.50){
+                double pesoIdeal = 18.50;
+                double pesoAganhar = pesoIdeal - IMC;
+      
+                return pesoAganhar; 
+            }
+          
+            if(IMC>=25.0){
+                double pesoIdeal = 25.0;
+                double pesoAperder =  IMC - pesoIdeal;
+                  
+                return pesoAperder; 
+            }
+            }
+
+            public Pessoa(string nome, double altura, double peso)
+            {
+                Nome= nome;
+                Altura=altura;
+                Peso=peso;
+            }
+    
 }
