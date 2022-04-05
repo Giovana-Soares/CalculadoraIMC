@@ -48,6 +48,20 @@ namespace CalculadoraIMC
             {
                 Console.WriteLine("Obesidade III (mórbida)");
             }
+            
+            if(imc<18.50){
+                double pesoIdeal = 18.50;
+                double pesoAganhar = Math.Round((pesoIdeal - imc), 2);
+      
+                 Console.WriteLine("Você precisa ganhar {0} KG para atingir o peso ideal", pesoAganhar); 
+            }
+          
+            if(imc>=25.0){
+                double pesoIdeal = 25.0;
+                double pesoAperder = Math.Round(( imc - pesoIdeal ), 2);
+                  
+                Console.WriteLine("Você precisa perder {0} KG para atingir o peso ideal", pesoAperder); 
+            }
         }
     }
 }
