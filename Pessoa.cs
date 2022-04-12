@@ -8,7 +8,7 @@ public class Pessoa{
     public double IMC { get => Peso / (Altura * Altura); }
 
     
-    public string FaixaIMC {
+    public string FaixaIMC(){
         if (IMC<17)
             {
                 return "Muito abaixo do peso";
@@ -33,26 +33,26 @@ public class Pessoa{
             {
                 return "Obesidade II (severa)"; 
             }
-            else
+            else if(IMC>40.00)
             {
                 return "Obesidade III (mórbida)";
             }
+        return "ERRO";
     }
 
-    public double Calculo{ 
-                 if(IMC<18.50){
-                double pesoIdeal = 18.50;
-                double pesoAganhar = pesoIdeal - IMC;
-      
-                return pesoAganhar; 
-            }
+    public double Calculo(){ 
+                if(IMC<18.50){
+                    double pesoIdeal = 18.50;
+                    double pesoAganhar = pesoIdeal - IMC;
+                    return pesoAganhar; 
+                }
           
-            if(IMC>=25.0){
-                double pesoIdeal = 25.0;
-                double pesoAperder =  IMC - pesoIdeal;
-                  
-                return pesoAperder; 
-            }
+                if(IMC>=25.0){
+                    double pesoIdeal = 25.0;
+                    double pesoAperder =  IMC - pesoIdeal;  
+                    return pesoAperder; 
+                }
+                return -1;
             }
 
             public Pessoa(string nome, double altura, double peso)
